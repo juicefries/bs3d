@@ -6,7 +6,7 @@
 
     <groupId>io.github.juicefries</groupId>
     <artifactId>bs3d</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 
     <name>Block Survival 3D</name>
     <description>Too lazy to write</description>

@@ -19,7 +19,7 @@ public class Start {
      * TODO 0.0.2 I wrote a bit, but I still don't know what to write.
      */
 
-    public final static double INTERVAL_NONE = -1.00000d;
+    public final static double INTERVAL_NONE = 0.000000d;
     public final static double INTERVAL_20   = 0.050000d;
     public final static double INTERVAL_30   = 0.033333d;
     public final static double INTERVAL_40   = 0.025000d;
@@ -147,15 +147,24 @@ public class Start {
             if (pause.get() || speed == 0.0f) continue;
             nanoTimer.update();
             float tpf = nanoTimer.getTimePerFrame() * speed;
-            updateTimer += tpf;
-            if (updateTimer >= logicUpdateInterval) {
-                updateTimer -= logicUpdateInterval;
+            if (logicUpdateInterval <= INTERVAL_NONE) {
                 update(tpf);
+            } else {
+                updateTimer += tpf;
+                if (updateTimer >= logicUpdateInterval) {
+                    updateTimer -= logicUpdateInterval;
+                    update(tpf);
+                }
             }
-            submissionTimer += tpf;
-            if (submissionTimer >= submissionScreenInterval) {
-                submissionTimer -= submissionScreenInterval;
+
+            if (submissionTimer <= INTERVAL_NONE) {
                 screen(tpf);
+            } else {
+                submissionTimer += tpf;
+                if (submissionTimer >= submissionScreenInterval) {
+                    submissionTimer -= submissionScreenInterval;
+                    screen(tpf);
+                }
             }
         }
     }
