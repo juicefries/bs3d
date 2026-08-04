@@ -1,0 +1,16 @@
+Block Survival 3D (BS3D)
+Copyright (c) 2026 juicefries
+
+This project uses the following third-party libraries:
+
+- JOML (Java OpenGL Math Library)
+  Version: 1.10.8
+  License: MIT
+  License text: licenses/joml/LICENSE
+
+- LWJGL (Lightweight Java Game Library)
+  Version: 3.4.2
+  License: BSD-3-Clause
+  License text: licenses/lwjgl/LICENSE
+
+Full license texts are available in the licenses/ subdirectory.
